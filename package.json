@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-jane",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Jane's Eslint config.",
   "main": "index.js",
   "scripts": {
