@@ -1,26 +1,26 @@
 {
   "name": "eslint-config-jane",
-  "version": "0.0.3",
   "description": "Jane's Eslint config.",
+  "version": "0.0.4",
+  "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
+  "license": "MIT",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "homepage": "https://github.com/jane/eslint-config-jane#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jane/eslint-config-jane.git"
   },
-  "keywords": [],
-  "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/jane/eslint-config-jane/issues"
   },
-  "homepage": "https://github.com/jane/eslint-config-jane#readme",
-  "peerDependencies": {
-    "eslint": ">= 3",
-    "babel-eslint": ">=7"
-  },
+  "keywords": [
+    "config",
+    "eslint",
+    "jane"
+  ],
   "dependencies": {
     "eslint-plugin-babel": "^4.1.1",
     "eslint-plugin-jest": "^19.0.1",
@@ -28,5 +28,9 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^6.10.3",
     "eslint-plugin-unicorn": "^2.1.1"
+  },
+  "peerDependencies": {
+    "eslint": ">= 3",
+    "babel-eslint": ">=7"
   }
 }
