@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-jane",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Jane's Eslint config.",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,7 @@
   "homepage": "https://github.com/jane/eslint-config-jane#readme",
   "peerDependencies": {
     "eslint": ">= 3",
-    "babel-eslint": ">-7"
+    "babel-eslint": ">=7"
   },
   "dependencies": {
     "eslint-plugin-babel": "^4.1.1",
