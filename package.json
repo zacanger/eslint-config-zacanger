@@ -16,5 +16,18 @@
   "bugs": {
     "url": "https://github.com/jane/eslint-config-jane/issues"
   },
-  "homepage": "https://github.com/jane/eslint-config-jane#readme"
+  "homepage": "https://github.com/jane/eslint-config-jane#readme",
+  "peerDependencies": {
+    "eslint": ">= 3",
+    "babel-eslint": ">-7"
+  },
+  "dependencies": {
+    "eslint-plugin-babel": "^4.1.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jest": "^19.0.1",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^6.10.3",
+    "eslint-plugin-unicorn": "^2.1.1"
+  }
 }
