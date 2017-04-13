@@ -1,0 +1,20 @@
+{
+  "name": "eslint-config-jane",
+  "version": "0.0.1",
+  "description": "Jane's Eslint config.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jane/eslint-config-jane.git"
+  },
+  "keywords": [],
+  "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jane/eslint-config-jane/issues"
+  },
+  "homepage": "https://github.com/jane/eslint-config-jane#readme"
+}
