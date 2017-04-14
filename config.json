@@ -512,7 +512,6 @@
     "jsx-a11y/no-distracting-elements": "warn",
     "jsx-a11y/no-onchange": "warn",
     "jsx-a11y/no-redundant-roles": "warn",
-    "jsx-a11y/no-static-element-interactions": "warn",
     "jsx-a11y/onclick-has-focus": "warn",
     "jsx-a11y/onclick-has-role": "warn",
     "jsx-a11y/role-has-required-aria-props": "warn",
