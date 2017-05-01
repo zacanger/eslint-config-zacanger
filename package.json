@@ -6,6 +6,7 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
+    "prepublish": "npm run test",
     "test": "node -e 'require(\".\")'"
   },
   "homepage": "https://github.com/jane/eslint-config-jane#readme",
