@@ -471,7 +471,14 @@
       }
     ],
     "react/jsx-no-undef": "warn",
-    "react/jsx-space-before-closing": "warn",
+    "react/jsx-tag-spacing": [
+      "warn",
+      {
+        "afterOpening": "never",
+        "beforeSelfClosing": "always",
+        "closingSlash": "never"
+      }
+    ],
     "react/jsx-pascal-case": [
       "warn",
       {
