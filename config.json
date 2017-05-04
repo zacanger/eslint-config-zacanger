@@ -317,7 +317,7 @@
         "ignoreExport": false
       }
     ],
-    "no-var": 0,
+    "no-var": "warn",
     "no-whitespace-before-property": "warn",
     "no-with": "error",
     "object-curly-spacing": [
