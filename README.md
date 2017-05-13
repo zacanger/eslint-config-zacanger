@@ -1,5 +1,7 @@
 # eslint-config-jane
 
+Shared eslint config for front-end projects at [Jane](https://jane.com).
+
 --------
 
 ## Installation
