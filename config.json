@@ -499,6 +499,7 @@
     "jest/no-disabled-tests": 0,
     "jest/no-focused-tests": "warn",
     "jest/no-identical-title": "warn",
+    "jest/valid-expect": "warn",
     "jsx-a11y/accessible-emoji": "warn",
     "jsx-a11y/anchor-has-content": "warn",
     "jsx-a11y/aria-activedescendant-has-tabindex": "warn",
