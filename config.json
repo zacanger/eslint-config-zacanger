@@ -297,7 +297,7 @@
       {
         "vars": "local",
         "varsIgnorePattern": "^_",
-        "args": "none"
+        "args": "after-used"
       }
     ],
     "no-use-before-define": [
