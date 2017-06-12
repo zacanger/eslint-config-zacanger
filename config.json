@@ -297,6 +297,7 @@
       {
         "vars": "local",
         "varsIgnorePattern": "^_",
+        "argsIgnorePattern": "^_",
         "args": "after-used"
       }
     ],
