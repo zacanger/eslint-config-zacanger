@@ -149,7 +149,6 @@
       "warn",
       "always"
     ],
-    "no-confusing-arrow": "warn",
     "no-const-assign": "warn",
     "no-constant-condition": [
       "warn",
