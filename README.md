@@ -47,9 +47,6 @@ Rules go in `config.json`. After editing, please run the file through
 [jq](https://stedolan.github.io/jq/). Example: `jq . < config.json > tmp && mv
 -f tmp config.json`, or in vim `:%!jq .`.
 
-If you're a Jane employee, make sure you're using the regular npm registry when
-working in this project (`npm config set registry https://registry.npmjs.org/`).
-
 ## LICENSE
 
 [MIT](./LICENSE.md)
