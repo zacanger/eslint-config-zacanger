@@ -10,17 +10,18 @@ Shared eslint config for front-end projects at [Jane](https://jane.com).
 
 ## Usage
 
-```javascript
-module.exports = {
-  root: true,
-  extends: 'eslint-config-jane'
+.eslintrc
+```json
+{
+  "root": true,
+  "extends": "eslint-config-jane"
   // any custom configs
 }
 ```
 
 ## Notes
 
-Our rules our heavily based on [Standard](https://standardjs.com/).
+Our rules are heavily based on [Standard](https://standardjs.com/).
 
 Most rules only warn. Exceptions (rules that error):
 
