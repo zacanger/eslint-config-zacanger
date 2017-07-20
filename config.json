@@ -297,7 +297,7 @@
       {
         "vars": "local",
         "varsIgnorePattern": "^_",
-        "argsIgnorePattern": "^_",
+        "argsIgnorePattern": "^_|...props|props",
         "args": "after-used"
       }
     ],
