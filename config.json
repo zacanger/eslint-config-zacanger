@@ -101,10 +101,6 @@
       "warn",
       "never"
     ],
-    "func-style": [
-      "warn",
-      "expression"
-    ],
     "generator-star-spacing": [
       "warn",
       {
