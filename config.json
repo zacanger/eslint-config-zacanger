@@ -41,6 +41,10 @@
         "after": true
       }
     ],
+    "arrow-body-style": [
+      "warn",
+      "as-needed"
+    ],
     "block-spacing": [
       "warn",
       "always"
@@ -96,6 +100,10 @@
     "func-call-spacing": [
       "warn",
       "never"
+    ],
+    "func-style": [
+      "warn",
+      "expression"
     ],
     "generator-star-spacing": [
       "warn",
