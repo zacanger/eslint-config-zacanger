@@ -6,7 +6,14 @@ Shared eslint config for front-end projects at [Jane](https://jane.com).
 
 ## Installation
 
-`npm i -D eslint-config-jane` or `yarn add -D eslint-config-jane`
+`npm i -D eslint-config-jane`
+
+You'll also need to install some plugins (`peerDependencies`), at least until
+there's some sort of resolution for [this
+issue](https://github.com/eslint/eslint/issues/3458):
+
+`npm i -D eslint-plugin-babel eslint-plugin-jest eslint-plugin-jsx-a11y
+eslint-plugin-promise eslint-plugin-react eslint-plugin-unicorn`
 
 ## Usage
 
