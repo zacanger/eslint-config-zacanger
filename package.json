@@ -5,6 +5,11 @@
   "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
   "license": "MIT",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "rules.js",
+    "helpers.js"
+  ],
   "scripts": {
     "prepublishOnly": "npm run test",
     "test": "npm run test:lint && npm run test:test",
