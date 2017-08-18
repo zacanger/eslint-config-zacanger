@@ -7,7 +7,9 @@
   "main": "index.js",
   "scripts": {
     "prepublishOnly": "npm run test",
-    "test": "node test"
+    "test": "npm run test:lint && npm run test:test",
+    "test:lint": "eslint -c .eslintrc.json rules.js",
+    "test:test": "node test"
   },
   "homepage": "https://github.com/jane/eslint-config-jane#readme",
   "repository": {
@@ -32,6 +34,9 @@
     "eslint-plugin-promise": "3.5.0",
     "eslint-plugin-react": "7.2.1",
     "eslint-plugin-unicorn": "2.1.2"
+  },
+  "engines": {
+    "node": ">=6.0.0"
   },
   "peerDependencies": {
     "eslint": "^4.3.0",

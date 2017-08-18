@@ -15,6 +15,10 @@ issue](https://github.com/eslint/eslint/issues/3458):
 `npm i -D eslint-plugin-babel eslint-plugin-jest eslint-plugin-jsx-a11y
 eslint-plugin-promise eslint-plugin-react eslint-plugin-unicorn`
 
+**Note** `eslint-plugin-react`, `eslint-plugin-jsx-a11y`, and
+`eslint-plugin-jest` are optional. If they're installed, their rules will be
+used.
+
 ## Usage
 
 .eslintrc
@@ -48,12 +52,6 @@ Most rules only warn. Exceptions (rules that error):
 * `quotes`: _single, avoidEscape true_
 * `unicode-bom`: _never_
 * `unicorn/filename-case`: _kebab_
-
-## Development
-
-Rules go in `config.json`. After editing, please run the file through
-[jq](https://stedolan.github.io/jq/). Example: `jq . < config.json > tmp && mv
--f tmp config.json`, or in vim `:%!jq .`.
 
 ## LICENSE
 
