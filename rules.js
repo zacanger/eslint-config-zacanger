@@ -88,7 +88,6 @@ const baseRules = {
   'eol-last': 'error',
   eqeqeq: [ 'warn', 'allow-null' ],
   'func-call-spacing': [ 'warn', 'never' ],
-  'func-style': [ 'warn', 'expression' ],
   'generator-star-spacing': [ 'warn', { before: true, after: true } ],
   'guard-for-in': 'warn',
   indent: [ 'error', 2, { SwitchCase: 1 } ],
