@@ -97,7 +97,11 @@ const baseRules = {
     afterColon: true
   }],
   'keyword-spacing': [ 'warn', { before: true, after: true } ],
-  'max-len': [ 'warn', 120 ],
+  'max-len': [ 'warn', 120, {
+    ignoreUrls: true,
+    ignoreRegExpLiterals: true,
+    ignoreStrings: true
+  }],
   'new-cap': [ 'error', { newIsCap: true, capIsNew: false } ],
   'new-parens': 'warn',
   'no-array-constructor': 'warn',
