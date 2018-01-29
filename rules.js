@@ -7,7 +7,7 @@ const hasJest = isInstalled('eslint-plugin-jest')
 const reactRules = {
   'react/jsx-indent': [ 'warn', 2 ],
   'react/jsx-indent-props': [ 'warn', 2 ],
-  'react/jsx-no-bind': 'warn',
+  'react/jsx-no-bind': 0,
   'react/no-did-update-set-state': 'warn',
   'react/jsx-no-duplicate-props': [ 'warn', { ignoreCase: true } ],
   'react/jsx-no-undef': 'warn',
