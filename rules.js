@@ -222,7 +222,7 @@ const baseRules = {
   }],
   'padded-blocks': [ 'warn', 'never' ],
   quotes: [ 'error', 'single', { avoidEscape: true } ],
-  'quote-props': [ 'warn', 'as-needed' ],
+  'quote-props': [ 'warn', 'as-needed', { numbers: true } ],
   radix: 'warn',
   'require-yield': 'warn',
   'rest-spread-spacing': [ 'warn', 'never' ],
