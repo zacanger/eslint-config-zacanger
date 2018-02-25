@@ -71,26 +71,16 @@ const jestRules = {
   'jest/valid-expect': 'warn'
 }
 
-const baseRules = {
-  'array-callback-return': 'warn',
+const styleRules = {
   'arrow-parens': [ 'warn', 'always' ],
   'arrow-spacing': [ 'warn', { before: true, after: true } ],
-  'arrow-body-style': [ 'warn', 'as-needed' ],
   'block-spacing': [ 'warn', 'always' ],
   'brace-style': [ 'warn', '1tbs', { allowSingleLine: true } ],
-  camelcase: [ 'warn', { properties: 'never' } ],
-  'comma-dangle': [ 'error', 'never' ],
   'comma-spacing': [ 'warn', { before: false, after: true } ],
   'comma-style': [ 'warn', 'last' ],
-  'constructor-super': 'warn',
-  curly: [ 'warn', 'multi-line' ],
-  'default-case': [ 'warn', { commentPattern: '^no default$' } ],
   'dot-location': [ 'warn', 'property' ],
-  'eol-last': 'error',
-  eqeqeq: [ 'warn', 'allow-null' ],
   'func-call-spacing': [ 'warn', 'never' ],
   'generator-star-spacing': [ 'warn', { before: true, after: true } ],
-  'guard-for-in': 'warn',
   indent: [ 'error', 2, { SwitchCase: 1 } ],
   'jsx-quotes': [ 'warn', 'prefer-double' ],
   'key-spacing': [ 'warn', {
@@ -103,6 +93,52 @@ const baseRules = {
     ignoreRegExpLiterals: true,
     ignoreStrings: true
   }],
+  'no-mixed-spaces-and-tabs': 'error',
+  'no-tabs': 'error',
+  'no-multi-spaces': [ 0 ],
+  'no-multiple-empty-lines': [ 'warn', { max: 1 } ],
+  'object-curly-spacing': [ 'warn', 'always' ],
+  'object-property-newline': [ 'warn', { allowMultiplePropertiesPerLine: true } ],
+  'one-var': [ 0 ],
+  'operator-linebreak': [ 'warn', 'after', {
+    overrides: {
+      '?': 'before',
+      ':': 'before'
+    }
+  }],
+  'padded-blocks': [ 'warn', 'never' ],
+  quotes: [ 'error', 'single', { avoidEscape: true } ],
+  'rest-spread-spacing': [ 'warn', 'never' ],
+  semi: [ 'warn', 'never' ],
+  'semi-spacing': [ 'warn', { before: false, after: true } ],
+  'space-before-blocks': [ 'warn', 'always' ],
+  'space-before-function-paren': [ 'warn', 'always' ],
+  'space-in-parens': [ 'warn', 'never' ],
+  'space-infix-ops': 'warn',
+  'space-unary-ops': [ 'warn', { words: true, nonwords: false } ],
+  'spaced-comment': [ 'warn', 'always', {
+    line: { markers: [ '*package', '!', ',' ] },
+    block: {
+      balanced: true,
+      markers: [ '*package', '!', ',' ],
+      exceptions: [ '*' ]
+    }
+  }],
+  'template-curly-spacing': [ 'warn', 'never' ],
+  'yield-star-spacing': [ 'warn', 'both' ]
+}
+
+const baseRules = {
+  'array-callback-return': 'warn',
+  'arrow-body-style': [ 'warn', 'as-needed' ],
+  camelcase: [ 'warn', { properties: 'never' } ],
+  'comma-dangle': [ 'error', 'never' ],
+  'constructor-super': 'warn',
+  curly: [ 'warn', 'multi-line' ],
+  'default-case': [ 'warn', { commentPattern: '^no default$' } ],
+  'eol-last': 'error',
+  eqeqeq: [ 'warn', 'allow-null' ],
+  'guard-for-in': 'warn',
   'new-cap': [ 'error', { newIsCap: true, capIsNew: false } ],
   'new-parens': 'warn',
   'no-array-constructor': 'warn',
@@ -147,10 +183,7 @@ const baseRules = {
     ],
     allowSamePrecedence: false
   }],
-  'no-mixed-spaces-and-tabs': 'error',
-  'no-multi-spaces': [ 0 ],
   'no-multi-str': 'warn',
-  'no-multiple-empty-lines': [ 'warn', { max: 1 } ],
   'no-native-reassign': 'warn',
   'no-negated-in-lhs': 'warn',
   'no-new-func': 'warn',
@@ -173,7 +206,6 @@ const baseRules = {
   'no-sequences': 'warn',
   'no-shadow-restricted-names': 'warn',
   'no-sparse-arrays': 'warn',
-  'no-tabs': 'error',
   'no-template-curly-in-string': 'warn',
   'no-this-before-super': 'warn',
   'no-throw-literal': 'warn',
@@ -211,44 +243,15 @@ const baseRules = {
   'no-var': 'warn',
   'no-whitespace-before-property': 'warn',
   'no-with': 'error',
-  'object-curly-spacing': [ 'warn', 'always' ],
-  'object-property-newline': [ 'warn', { allowMultiplePropertiesPerLine: true } ],
-  'one-var': [ 0 ],
   'operator-assignment': [ 'warn', 'always' ],
-  'operator-linebreak': [ 'warn', 'after', {
-    overrides: {
-      '?': 'before',
-      ':': 'before'
-    }
-  }],
-  'padded-blocks': [ 'warn', 'never' ],
-  quotes: [ 'error', 'single', { avoidEscape: true } ],
   'quote-props': [ 'warn', 'as-needed', { numbers: true } ],
   radix: 'warn',
   'require-yield': 'warn',
-  'rest-spread-spacing': [ 'warn', 'never' ],
-  semi: [ 'warn', 'never' ],
-  'semi-spacing': [ 'warn', { before: false, after: true } ],
-  'space-before-blocks': [ 'warn', 'always' ],
-  'space-before-function-paren': [ 'warn', 'always' ],
-  'space-in-parens': [ 'warn', 'never' ],
-  'space-infix-ops': 'warn',
-  'space-unary-ops': [ 'warn', { words: true, nonwords: false } ],
-  'spaced-comment': [ 'warn', 'always', {
-    line: { markers: [ '*package', '!', ',' ] },
-    block: {
-      balanced: true,
-      markers: [ '*package', '!', ',' ],
-      exceptions: [ '*' ]
-    }
-  }],
   strict: [ 'warn', 'never' ],
-  'template-curly-spacing': [ 'warn', 'never' ],
   'unicode-bom': [ 'error', 'never' ],
   'use-isnan': 'warn',
   'valid-typeof': 'warn',
   'wrap-iife': [ 'warn', 'any' ],
-  'yield-star-spacing': [ 'warn', 'both' ],
   yoda: [ 'warn', 'never' ],
   'unicorn/filename-case': [ 'error', {
     case: 'kebabCase'
@@ -260,7 +263,13 @@ const baseRules = {
   'linebreak-style': [ 'error', 'unix' ]
 }
 
-const rules = Object.assign(...keep([ baseRules, hasReact && reactRules, hasA11y && a11yRules, hasJest && jestRules ]))
+const rules = Object.assign(...keep([
+  baseRules,
+  styleRules,
+  hasReact && reactRules,
+  hasA11y && a11yRules,
+  hasJest && jestRules
+]))
 
 const config = {
   parser: 'babel-eslint',
