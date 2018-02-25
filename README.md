@@ -14,7 +14,7 @@ issue](https://github.com/eslint/eslint/issues/3458):
 
 `npm i -D babel-eslint eslint-plugin-babel eslint-plugin-jest
 eslint-plugin-jsx-a11y eslint-plugin-promise eslint-plugin-react
-eslint-plugin-unicorn`
+eslint-plugin-unicorn eslint-plugin-import`
 
 **Note** `eslint-plugin-react`, `eslint-plugin-jsx-a11y`, and
 `eslint-plugin-jest` are optional. If they're installed, their rules will be

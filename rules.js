@@ -264,6 +264,7 @@ const rules = Object.assign(...keep([ baseRules, hasReact && reactRules, hasA11y
 
 const config = {
   parser: 'babel-eslint',
+  extends: 'plugin:import/warnings',
   plugins: keep([
     hasA11y && 'jsx-a11y',
     'babel',
