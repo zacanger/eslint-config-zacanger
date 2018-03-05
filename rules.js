@@ -3,6 +3,7 @@ const { isInstalled, keep } = require('./helpers')
 const hasReact = isInstalled('eslint-plugin-react')
 const hasA11y = isInstalled('eslint-plugin-jsx-a11y')
 const hasJest = isInstalled('eslint-plugin-jest')
+const hasPrettier = isInstalled('eslint-plugin-prettier')
 
 const reactRules = {
   'react/jsx-indent': [ 'warn', 2 ],
@@ -126,6 +127,10 @@ const styleRules = {
   }],
   'template-curly-spacing': [ 'warn', 'never' ],
   'yield-star-spacing': [ 'warn', 'both' ]
+}
+
+const prettierRules = {
+  'prettier/prettier': 'warn'
 }
 
 const baseRules = {
@@ -265,7 +270,8 @@ const baseRules = {
 
 const rules = Object.assign(...keep([
   baseRules,
-  styleRules,
+  !hasPrettier && styleRules,
+  hasPrettier && prettierRules,
   hasReact && reactRules,
   hasA11y && a11yRules,
   hasJest && jestRules
@@ -275,6 +281,7 @@ const config = {
   parser: 'babel-eslint',
   extends: 'plugin:import/warnings',
   plugins: keep([
+    hasPrettier && 'prettier',
     hasA11y && 'jsx-a11y',
     'babel',
     hasReact && 'react',

@@ -33,7 +33,8 @@ used.
 
 ## Notes
 
-Our rules are heavily based on [Standard](https://standardjs.com/).
+Our rules are heavily based on [Standard](https://standardjs.com/). If
+`eslint-plugin-prettier` is installed, our style rules are removed.
 
 Most rules only warn. Exceptions (rules that error):
 
