@@ -5,18 +5,23 @@ const hasA11y = isInstalled('eslint-plugin-jsx-a11y')
 const hasJest = isInstalled('eslint-plugin-jest')
 const hasPrettier = isInstalled('eslint-plugin-prettier')
 
-const reactRules = {
+const reactStyleRules = {
   'react/jsx-indent': [ 'warn', 2 ],
   'react/jsx-indent-props': [ 'warn', 2 ],
-  'react/jsx-no-bind': 0,
-  'react/no-did-update-set-state': 'warn',
-  'react/jsx-no-duplicate-props': [ 'warn', { ignoreCase: true } ],
-  'react/jsx-no-undef': 'warn',
   'react/jsx-tag-spacing': [ 'warn', {
     afterOpening: 'never',
     beforeSelfClosing: 'always',
     closingSlash: 'never'
   }],
+  'react/jsx-curly-spacing': [ 'warn', 'never' ],
+  'react/jsx-equals-spacing': [ 'warn', 'never' ]
+}
+
+const reactRules = Object.assign({
+  'react/jsx-no-bind': 0,
+  'react/no-did-update-set-state': 'warn',
+  'react/jsx-no-duplicate-props': [ 'warn', { ignoreCase: true } ],
+  'react/jsx-no-undef': 'warn',
   'react/jsx-pascal-case': [ 'warn', {
     allowAllCaps: true,
     ignore: []
@@ -28,14 +33,12 @@ const reactRules = {
   'react/no-access-state-in-setstate': 'warn',
   'react/no-is-mounted': 'warn',
   'react/jsx-boolean-value': 'warn',
-  'react/jsx-curly-spacing': [ 'warn', 'never' ],
-  'react/jsx-equals-spacing': [ 'warn', 'never' ],
   'react/no-unknown-property': 'warn',
   'react/prop-types': 'warn',
   'react/react-in-jsx-scope': 'warn',
   'react/require-render-return': 'warn',
   'react/self-closing-comp': 'warn'
-}
+}, !hasPrettier && reactStyleRules)
 
 const a11yRules = {
   'jsx-a11y/accessible-emoji': 'warn',
@@ -130,7 +133,14 @@ const styleRules = {
 }
 
 const prettierRules = {
-  'prettier/prettier': 'warn'
+  'prettier/prettier': [ 'warn', {
+    printWidth: 80,
+    tabWidth: 2,
+    semi: false,
+    singleQuote: true,
+    arrowParens: 'always',
+    parser: 'babylon'
+  }]
 }
 
 const baseRules = {
