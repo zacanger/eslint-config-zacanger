@@ -12,13 +12,18 @@ You'll also need to install some plugins (`peerDependencies`), at least until
 there's some sort of resolution for [this
 issue](https://github.com/eslint/eslint/issues/3458):
 
-`npm i -D babel-eslint eslint-plugin-babel eslint-plugin-jest
-eslint-plugin-jsx-a11y eslint-plugin-promise eslint-plugin-react
-eslint-plugin-unicorn eslint-plugin-import`
+`npm i -D babel-eslint eslint-plugin-babel eslint-plugin-promise
+eslint-plugin-import eslint-plugin-unicorn`.
 
-**Note** `eslint-plugin-react`, `eslint-plugin-jsx-a11y`, and
-`eslint-plugin-jest` are optional. If they're installed, their rules will be
-used.
+Optionally, you can also install any or all of:
+
+* `eslint-plugin-jest`
+* `eslint-plugin-jsx-a11y`
+* `eslint-plugin-prettier`
+* `eslint-plugin-react`
+
+If they're installed, their rules will be used. If `eslint-plugin-prettier` is
+installed, our style rules are removed.
 
 ## Usage
 
@@ -33,8 +38,7 @@ used.
 
 ## Notes
 
-Our rules are heavily based on [Standard](https://standardjs.com/). If
-`eslint-plugin-prettier` is installed, our style rules are removed.
+Our rules are heavily based on [Standard](https://standardjs.com/).
 
 Most rules only warn. Exceptions (rules that error):
 

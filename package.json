@@ -51,6 +51,7 @@
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jest": "^21.0.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^7.2.0",
     "eslint-plugin-unicorn": "^4.0.0"
