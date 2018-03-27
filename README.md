@@ -36,6 +36,11 @@ installed, our style rules are removed.
 }
 ```
 
+.prettierrc.js
+```javascript
+module.exports = require('eslint-config-jane/prettier')
+```
+
 ## Notes
 
 Our rules are heavily based on [Standard](https://standardjs.com/).
