@@ -47,7 +47,7 @@ Our rules are heavily based on [Standard](https://standardjs.com/).
 
 Most rules only warn. Exceptions (rules that error):
 
-* `comma-dangle`: _never_
+* `comma-dangle`: es5 compatible
 * `eol-last`
 * `indent`: _2, `SwitchCase` 1_
 * `new-cap`: _`newIsCap` true, `capIsNew` false_

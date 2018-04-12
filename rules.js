@@ -147,7 +147,13 @@ const baseRules = {
   'array-callback-return': 'warn',
   'arrow-body-style': [ 'warn', 'as-needed' ],
   camelcase: [ 'warn', { properties: 'never' } ],
-  'comma-dangle': [ 'error', 'never' ],
+  'comma-dangle': ['error', {
+    arrays: 'ignore',
+    objects: 'ignore',
+    imports: 'ignore',
+    exports: 'ignore',
+    functions: 'never'
+  }],
   'constructor-super': 'warn',
   curly: [ 'warn', 'multi-line' ],
   'default-case': [ 'warn', { commentPattern: '^no default$' } ],

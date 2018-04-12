@@ -1,8 +1,9 @@
 module.exports = {
+  arrowParens: 'always',
+  parser: 'babylon',
   printWidth: 80,
-  tabWidth: 2,
   semi: false,
   singleQuote: true,
-  arrowParens: 'always',
-  parser: 'babylon'
+  tabWidth: 2,
+  trailingComma: 'es5',
 }
