@@ -1,4 +1,5 @@
 const { isInstalled, keep } = require('./helpers')
+const prettierFormat = require('./prettier')
 
 const hasReact = isInstalled('eslint-plugin-react')
 const hasA11y = isInstalled('eslint-plugin-jsx-a11y')
@@ -6,39 +7,48 @@ const hasJest = isInstalled('eslint-plugin-jest')
 const hasPrettier = isInstalled('eslint-plugin-prettier')
 
 const reactStyleRules = {
-  'react/jsx-indent': [ 'warn', 2 ],
-  'react/jsx-indent-props': [ 'warn', 2 ],
-  'react/jsx-tag-spacing': [ 'warn', {
-    afterOpening: 'never',
-    beforeSelfClosing: 'always',
-    closingSlash: 'never'
-  }],
-  'react/jsx-curly-spacing': [ 'warn', 'never' ],
-  'react/jsx-equals-spacing': [ 'warn', 'never' ]
+  'react/jsx-indent': ['warn', 2],
+  'react/jsx-indent-props': ['warn', 2],
+  'react/jsx-tag-spacing': [
+    'warn',
+    {
+      afterOpening: 'never',
+      beforeSelfClosing: 'always',
+      closingSlash: 'never',
+    },
+  ],
+  'react/jsx-curly-spacing': ['warn', 'never'],
+  'react/jsx-equals-spacing': ['warn', 'never'],
 }
 
-const reactRules = Object.assign({
-  'react/jsx-no-bind': 0,
-  'react/no-did-update-set-state': 'warn',
-  'react/jsx-no-duplicate-props': [ 'warn', { ignoreCase: true } ],
-  'react/jsx-no-undef': 'warn',
-  'react/jsx-pascal-case': [ 'warn', {
-    allowAllCaps: true,
-    ignore: []
-  }],
-  'react/jsx-uses-react': 'warn',
-  'react/jsx-uses-vars': 'warn',
-  'react/no-deprecated': 'warn',
-  'react/no-direct-mutation-state': 'error',
-  'react/no-access-state-in-setstate': 'warn',
-  'react/no-is-mounted': 'warn',
-  'react/jsx-boolean-value': 'warn',
-  'react/no-unknown-property': 'warn',
-  'react/prop-types': 'warn',
-  'react/react-in-jsx-scope': 'warn',
-  'react/require-render-return': 'warn',
-  'react/self-closing-comp': 'warn'
-}, !hasPrettier && reactStyleRules)
+const reactRules = Object.assign(
+  {
+    'react/jsx-no-bind': 0,
+    'react/no-did-update-set-state': 'warn',
+    'react/jsx-no-duplicate-props': ['warn', { ignoreCase: true }],
+    'react/jsx-no-undef': 'warn',
+    'react/jsx-pascal-case': [
+      'warn',
+      {
+        allowAllCaps: true,
+        ignore: [],
+      },
+    ],
+    'react/jsx-uses-react': 'warn',
+    'react/jsx-uses-vars': 'warn',
+    'react/no-deprecated': 'warn',
+    'react/no-direct-mutation-state': 'error',
+    'react/no-access-state-in-setstate': 'warn',
+    'react/no-is-mounted': 'warn',
+    'react/jsx-boolean-value': 'warn',
+    'react/no-unknown-property': 'warn',
+    'react/prop-types': 'warn',
+    'react/react-in-jsx-scope': 'warn',
+    'react/require-render-return': 'warn',
+    'react/self-closing-comp': 'warn',
+  },
+  !hasPrettier && reactStyleRules
+)
 
 const a11yRules = {
   'jsx-a11y/accessible-emoji': 'warn',
@@ -65,109 +75,120 @@ const a11yRules = {
   'jsx-a11y/role-has-required-aria-props': 'warn',
   'jsx-a11y/role-supports-aria-props': 'warn',
   'jsx-a11y/scope': 'warn',
-  'jsx-a11y/tabindex-no-positive': 'warn'
+  'jsx-a11y/tabindex-no-positive': 'warn',
 }
 
 const jestRules = {
   'jest/no-disabled-tests': 0,
   'jest/no-focused-tests': 'warn',
   'jest/no-identical-title': 'warn',
-  'jest/valid-expect': 'warn'
+  'jest/valid-expect': 'warn',
 }
 
 const styleRules = {
-  'arrow-parens': [ 'warn', 'always' ],
-  'arrow-spacing': [ 'warn', { before: true, after: true } ],
-  'block-spacing': [ 'warn', 'always' ],
-  'brace-style': [ 'warn', '1tbs', { allowSingleLine: true } ],
-  'comma-spacing': [ 'warn', { before: false, after: true } ],
-  'comma-style': [ 'warn', 'last' ],
-  'dot-location': [ 'warn', 'property' ],
-  'func-call-spacing': [ 'warn', 'never' ],
-  'generator-star-spacing': [ 'warn', { before: true, after: true } ],
-  indent: [ 'error', 2, { SwitchCase: 1 } ],
-  'jsx-quotes': [ 'warn', 'prefer-double' ],
-  'key-spacing': [ 'warn', {
-    beforeColon: false,
-    afterColon: true
-  }],
-  'keyword-spacing': [ 'warn', { before: true, after: true } ],
-  'max-len': [ 'warn', 120, {
-    ignoreUrls: true,
-    ignoreRegExpLiterals: true,
-    ignoreStrings: true
-  }],
+  'arrow-parens': ['warn', 'always'],
+  'arrow-spacing': ['warn', { before: true, after: true }],
+  'block-spacing': ['warn', 'always'],
+  'brace-style': ['warn', '1tbs', { allowSingleLine: true }],
+  'comma-spacing': ['warn', { before: false, after: true }],
+  'comma-style': ['warn', 'last'],
+  'dot-location': ['warn', 'property'],
+  'func-call-spacing': ['warn', 'never'],
+  'generator-star-spacing': ['warn', { before: true, after: true }],
+  indent: ['error', 2, { SwitchCase: 1 }],
+  'jsx-quotes': ['warn', 'prefer-double'],
+  'key-spacing': [
+    'warn',
+    {
+      beforeColon: false,
+      afterColon: true,
+    },
+  ],
+  'keyword-spacing': ['warn', { before: true, after: true }],
+  'max-len': [
+    'warn',
+    120,
+    {
+      ignoreUrls: true,
+      ignoreRegExpLiterals: true,
+      ignoreStrings: true,
+    },
+  ],
   'no-mixed-spaces-and-tabs': 'error',
   'no-tabs': 'error',
-  'no-multi-spaces': [ 0 ],
-  'no-multiple-empty-lines': [ 'warn', { max: 1 } ],
-  'object-curly-spacing': [ 'warn', 'always' ],
-  'object-property-newline': [ 'warn', { allowMultiplePropertiesPerLine: true } ],
-  'one-var': [ 0 ],
-  'operator-linebreak': [ 'warn', 'after', {
-    overrides: {
-      '?': 'before',
-      ':': 'before'
-    }
-  }],
-  'padded-blocks': [ 'warn', 'never' ],
-  quotes: [ 'error', 'single', { avoidEscape: true } ],
-  'rest-spread-spacing': [ 'warn', 'never' ],
-  semi: [ 'warn', 'never' ],
-  'semi-spacing': [ 'warn', { before: false, after: true } ],
-  'space-before-blocks': [ 'warn', 'always' ],
-  'space-before-function-paren': [ 'warn', 'always' ],
-  'space-in-parens': [ 'warn', 'never' ],
+  'no-multi-spaces': [0],
+  'no-multiple-empty-lines': ['warn', { max: 1 }],
+  'object-curly-spacing': ['warn', 'always'],
+  'object-property-newline': ['warn', { allowMultiplePropertiesPerLine: true }],
+  'one-var': [0],
+  'operator-linebreak': [
+    'warn',
+    'after',
+    {
+      overrides: {
+        '?': 'before',
+        ':': 'before',
+      },
+    },
+  ],
+  'padded-blocks': ['warn', 'never'],
+  quotes: ['error', 'single', { avoidEscape: true }],
+  'rest-spread-spacing': ['warn', 'never'],
+  semi: ['warn', 'never'],
+  'semi-spacing': ['warn', { before: false, after: true }],
+  'space-before-blocks': ['warn', 'always'],
+  'space-before-function-paren': ['warn', 'always'],
+  'space-in-parens': ['warn', 'never'],
   'space-infix-ops': 'warn',
-  'space-unary-ops': [ 'warn', { words: true, nonwords: false } ],
-  'spaced-comment': [ 'warn', 'always', {
-    line: { markers: [ '*package', '!', ',' ] },
-    block: {
-      balanced: true,
-      markers: [ '*package', '!', ',' ],
-      exceptions: [ '*' ]
-    }
-  }],
-  'template-curly-spacing': [ 'warn', 'never' ],
-  'yield-star-spacing': [ 'warn', 'both' ]
+  'space-unary-ops': ['warn', { words: true, nonwords: false }],
+  'spaced-comment': [
+    'warn',
+    'always',
+    {
+      line: { markers: ['*package', '!', ','] },
+      block: {
+        balanced: true,
+        markers: ['*package', '!', ','],
+        exceptions: ['*'],
+      },
+    },
+  ],
+  'template-curly-spacing': ['warn', 'never'],
+  'yield-star-spacing': ['warn', 'both'],
 }
 
 const prettierRules = {
-  'prettier/prettier': [ 'warn', {
-    printWidth: 80,
-    tabWidth: 2,
-    semi: false,
-    singleQuote: true,
-    arrowParens: 'always',
-    parser: 'babylon'
-  }]
+  'prettier/prettier': ['warn', prettierFormat],
 }
 
 const baseRules = {
   'array-callback-return': 'warn',
-  'arrow-body-style': [ 'warn', 'as-needed' ],
-  camelcase: [ 'warn', { properties: 'never' } ],
-  'comma-dangle': ['error', {
-    arrays: 'ignore',
-    objects: 'ignore',
-    imports: 'ignore',
-    exports: 'ignore',
-    functions: 'never'
-  }],
+  'arrow-body-style': ['warn', 'as-needed'],
+  camelcase: ['warn', { properties: 'never' }],
+  'comma-dangle': [
+    'error',
+    {
+      arrays: 'ignore',
+      objects: 'ignore',
+      imports: 'ignore',
+      exports: 'ignore',
+      functions: 'never',
+    },
+  ],
   'constructor-super': 'warn',
-  curly: [ 'warn', 'multi-line' ],
-  'default-case': [ 'warn', { commentPattern: '^no default$' } ],
+  curly: ['warn', 'multi-line'],
+  'default-case': ['warn', { commentPattern: '^no default$' }],
   'eol-last': 'error',
-  eqeqeq: [ 'warn', 'allow-null' ],
+  eqeqeq: ['warn', 'allow-null'],
   'guard-for-in': 'warn',
-  'new-cap': [ 'error', { newIsCap: true, capIsNew: false } ],
+  'new-cap': ['error', { newIsCap: true, capIsNew: false }],
   'new-parens': 'warn',
   'no-array-constructor': 'warn',
   'no-caller': 'warn',
   'no-class-assign': 'warn',
-  'no-cond-assign': [ 'warn', 'always' ],
+  'no-cond-assign': ['warn', 'always'],
   'no-const-assign': 'warn',
-  'no-constant-condition': [ 'warn', { checkLoops: false } ],
+  'no-constant-condition': ['warn', { checkLoops: false }],
   'no-control-regex': 'warn',
   'no-debugger': 'warn',
   'no-delete-var': 'warn',
@@ -183,7 +204,7 @@ const baseRules = {
   'no-extend-native': 'error',
   'no-extra-bind': 'warn',
   'no-extra-label': 'warn',
-  'no-extra-parens': [ 'warn', 'functions' ],
+  'no-extra-parens': ['warn', 'functions'],
   'no-fallthrough': 'warn',
   'no-func-assign': 'warn',
   'no-global-assign': 'error',
@@ -192,18 +213,21 @@ const baseRules = {
   'no-irregular-whitespace': 'warn',
   'no-iterator': 'warn',
   'no-label-var': 'warn',
-  'no-labels': [ 'warn', { allowLoop: false, allowSwitch: false } ],
+  'no-labels': ['warn', { allowLoop: false, allowSwitch: false }],
   'no-lone-blocks': 'warn',
   'no-loop-func': 'warn',
-  'no-mixed-operators': [ 'warn', {
-    groups: [
-      [ '&', '|', '^', '~', '<<', '>>', '>>>' ],
-      [ '==', '!=', '===', '!==', '>', '>=', '<', '<=' ],
-      [ '&&', '||' ],
-      [ 'in', 'instanceof' ]
-    ],
-    allowSamePrecedence: false
-  }],
+  'no-mixed-operators': [
+    'warn',
+    {
+      groups: [
+        ['&', '|', '^', '~', '<<', '>>', '>>>'],
+        ['==', '!=', '===', '!==', '>', '>=', '<', '<='],
+        ['&&', '||'],
+        ['in', 'instanceof'],
+      ],
+      allowSamePrecedence: false,
+    },
+  ],
   'no-multi-str': 'warn',
   'no-native-reassign': 'warn',
   'no-negated-in-lhs': 'warn',
@@ -219,8 +243,8 @@ const baseRules = {
   'no-proto': 'warn',
   'no-redeclare': 'warn',
   'no-regex-spaces': 'warn',
-  'no-restricted-syntax': [ 'warn', 'LabeledStatement', 'WithStatement' ],
-  'no-return-assign': [ 'warn', 'except-parens' ],
+  'no-restricted-syntax': ['warn', 'LabeledStatement', 'WithStatement'],
+  'no-return-assign': ['warn', 'except-parens'],
   'no-script-url': 'warn',
   'no-self-assign': 'warn',
   'no-self-compare': 'warn',
@@ -234,64 +258,78 @@ const baseRules = {
   'no-undef': 'error',
   'no-undef-init': 'error',
   'no-unexpected-multiline': 'warn',
-  'no-unneeded-ternary': [ 'warn', { defaultAssignment: false } ],
+  'no-unneeded-ternary': ['warn', { defaultAssignment: false }],
   'no-unreachable': 'warn',
   'no-unsafe-finally': 'warn',
   'no-unsafe-negation': 'warn',
-  'no-unused-expressions': [ 'warn', {
-    allowTernary: true,
-    allowShortCircuit: true
-  }],
+  'no-unused-expressions': [
+    'warn',
+    {
+      allowTernary: true,
+      allowShortCircuit: true,
+    },
+  ],
   'no-unused-labels': 'warn',
-  'no-unused-vars': [ 'warn', {
-    vars: 'local',
-    varsIgnorePattern: '^_',
-    argsIgnorePattern: '^_|...props|props',
-    args: 'after-used',
-    ignoreRestSiblings: true
-  }],
-  'no-use-before-define': [ 'warn', 'nofunc' ],
+  'no-unused-vars': [
+    'warn',
+    {
+      vars: 'local',
+      varsIgnorePattern: '^_',
+      argsIgnorePattern: '^_|...props|props',
+      args: 'after-used',
+      ignoreRestSiblings: true,
+    },
+  ],
+  'no-use-before-define': ['warn', 'nofunc'],
   'no-useless-call': 'warn',
   'no-useless-computed-key': 'warn',
   'no-useless-concat': 'warn',
   'no-useless-constructor': 'warn',
   'no-useless-escape': 'warn',
-  'no-useless-rename': [ 'warn', {
-    ignoreDestructuring: false,
-    ignoreImport: false,
-    ignoreExport: false
-  }],
+  'no-useless-rename': [
+    'warn',
+    {
+      ignoreDestructuring: false,
+      ignoreImport: false,
+      ignoreExport: false,
+    },
+  ],
   'no-var': 'warn',
   'no-whitespace-before-property': 'warn',
   'no-with': 'error',
-  'operator-assignment': [ 'warn', 'always' ],
-  'quote-props': [ 'warn', 'as-needed', { numbers: true } ],
+  'operator-assignment': ['warn', 'always'],
+  'quote-props': ['warn', 'as-needed', { numbers: true }],
   radix: 'warn',
   'require-yield': 'warn',
-  strict: [ 'warn', 'never' ],
-  'unicode-bom': [ 'error', 'never' ],
+  strict: ['warn', 'never'],
+  'unicode-bom': ['error', 'never'],
   'use-isnan': 'warn',
   'valid-typeof': 'warn',
-  'wrap-iife': [ 'warn', 'any' ],
-  yoda: [ 'warn', 'never' ],
-  'unicorn/filename-case': [ 'error', {
-    case: 'kebabCase'
-  }],
+  'wrap-iife': ['warn', 'any'],
+  yoda: ['warn', 'never'],
+  'unicorn/filename-case': [
+    'error',
+    {
+      case: 'kebabCase',
+    },
+  ],
   'unicorn/no-array-instanceof': 'warn',
   'unicorn/no-new-buffer': 'warn',
   'unicorn/prefer-starts-ends-with': 'warn',
   'unicorn/prefer-type-error': 'warn',
-  'linebreak-style': [ 'error', 'unix' ]
+  'linebreak-style': ['error', 'unix'],
 }
 
-const rules = Object.assign(...keep([
-  baseRules,
-  !hasPrettier && styleRules,
-  hasPrettier && prettierRules,
-  hasReact && reactRules,
-  hasA11y && a11yRules,
-  hasJest && jestRules
-]))
+const rules = Object.assign(
+  ...keep([
+    baseRules,
+    !hasPrettier && styleRules,
+    hasPrettier && prettierRules,
+    hasReact && reactRules,
+    hasA11y && a11yRules,
+    hasJest && jestRules,
+  ])
+)
 
 const config = {
   parser: 'babel-eslint',
@@ -302,14 +340,14 @@ const config = {
     'babel',
     hasReact && 'react',
     hasJest && 'jest',
-    'unicorn'
+    'unicorn',
   ]),
   env: {
     browser: true,
     commonjs: true,
     es6: true,
     node: true,
-    jest: hasJest
+    jest: hasJest,
   },
   globals: { _jane: false },
   parserOptions: {
@@ -318,10 +356,10 @@ const config = {
     ecmaFeatures: {
       jsx: hasReact,
       generators: true,
-      experimentalObjectRestSpread: true
-    }
+      experimentalObjectRestSpread: true,
+    },
   },
-  rules
+  rules,
 }
 
 module.exports = config

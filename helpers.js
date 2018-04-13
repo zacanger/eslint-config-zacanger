@@ -11,5 +11,5 @@ const keep = (a) => a.filter(id)
 
 module.exports = {
   isInstalled,
-  keep
+  keep,
 }
