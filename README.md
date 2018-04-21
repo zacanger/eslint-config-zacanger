@@ -17,7 +17,6 @@ eslint-plugin-import eslint-plugin-unicorn`.
 
 Optionally, you can also install any or all of:
 
-* `eslint-plugin-jest`
 * `eslint-plugin-jsx-a11y`
 * `eslint-plugin-react`
 
