@@ -1,14 +1,12 @@
 const { isInstalled, keep } = require('./helpers')
-const prettierFormat = require('./prettier')
 
 const hasReact = isInstalled('eslint-plugin-react')
 const hasA11y = isInstalled('eslint-plugin-jsx-a11y')
 const hasJest = isInstalled('eslint-plugin-jest')
-const hasPrettier = isInstalled('eslint-plugin-prettier')
 
 const reactStyleRules = {
-  'react/jsx-indent': ['warn', 2],
-  'react/jsx-indent-props': ['warn', 2],
+  'react/jsx-indent': [ 'warn', 2 ],
+  'react/jsx-indent-props': [ 'warn', 2 ],
   'react/jsx-tag-spacing': [
     'warn',
     {
@@ -17,38 +15,35 @@ const reactStyleRules = {
       closingSlash: 'never',
     },
   ],
-  'react/jsx-curly-spacing': ['warn', 'never'],
-  'react/jsx-equals-spacing': ['warn', 'never'],
+  'react/jsx-curly-spacing': [ 'warn', 'never' ],
+  'react/jsx-equals-spacing': [ 'warn', 'never' ],
 }
 
-const reactRules = Object.assign(
-  {
-    'react/jsx-no-bind': 0,
-    'react/no-did-update-set-state': 'warn',
-    'react/jsx-no-duplicate-props': ['warn', { ignoreCase: true }],
-    'react/jsx-no-undef': 'warn',
-    'react/jsx-pascal-case': [
-      'warn',
-      {
-        allowAllCaps: true,
-        ignore: [],
-      },
-    ],
-    'react/jsx-uses-react': 'warn',
-    'react/jsx-uses-vars': 'warn',
-    'react/no-deprecated': 'warn',
-    'react/no-direct-mutation-state': 'error',
-    'react/no-access-state-in-setstate': 'warn',
-    'react/no-is-mounted': 'warn',
-    'react/jsx-boolean-value': 'warn',
-    'react/no-unknown-property': 'warn',
-    'react/prop-types': 'warn',
-    'react/react-in-jsx-scope': 'warn',
-    'react/require-render-return': 'warn',
-    'react/self-closing-comp': 'warn',
-  },
-  !hasPrettier && reactStyleRules
-)
+const reactRules = Object.assign({
+  'react/jsx-no-bind': 0,
+  'react/no-did-update-set-state': 'warn',
+  'react/jsx-no-duplicate-props': [ 'warn', { ignoreCase: true } ],
+  'react/jsx-no-undef': 'warn',
+  'react/jsx-pascal-case': [
+    'warn',
+    {
+      allowAllCaps: true,
+      ignore: [],
+    },
+  ],
+  'react/jsx-uses-react': 'warn',
+  'react/jsx-uses-vars': 'warn',
+  'react/no-deprecated': 'warn',
+  'react/no-direct-mutation-state': 'error',
+  'react/no-access-state-in-setstate': 'warn',
+  'react/no-is-mounted': 'warn',
+  'react/jsx-boolean-value': 'warn',
+  'react/no-unknown-property': 'warn',
+  'react/prop-types': 'warn',
+  'react/react-in-jsx-scope': 'warn',
+  'react/require-render-return': 'warn',
+  'react/self-closing-comp': 'warn',
+}, reactStyleRules)
 
 const a11yRules = {
   'jsx-a11y/accessible-emoji': 'warn',
@@ -86,17 +81,19 @@ const jestRules = {
 }
 
 const styleRules = {
-  'arrow-parens': ['warn', 'always'],
-  'arrow-spacing': ['warn', { before: true, after: true }],
-  'block-spacing': ['warn', 'always'],
-  'brace-style': ['warn', '1tbs', { allowSingleLine: true }],
-  'comma-spacing': ['warn', { before: false, after: true }],
-  'comma-style': ['warn', 'last'],
-  'dot-location': ['warn', 'property'],
-  'func-call-spacing': ['warn', 'never'],
-  'generator-star-spacing': ['warn', { before: true, after: true }],
-  indent: ['error', 2, { SwitchCase: 1 }],
-  'jsx-quotes': ['warn', 'prefer-double'],
+  'array-bracket-spacing': [ 'warn', 'always' ],
+  'arrow-parens': [ 'warn', 'always' ],
+  'arrow-spacing': [ 'warn', { before: true, after: true } ],
+  'block-spacing': [ 'warn', 'always' ],
+  'brace-style': [ 'warn', '1tbs', { allowSingleLine: true } ],
+  'comma-spacing': [ 'warn', { before: false, after: true } ],
+  'comma-style': [ 'warn', 'last' ],
+  'dot-location': [ 'warn', 'property' ],
+  'func-call-spacing': [ 'warn', 'never' ],
+  'func-style': [ 'warn', 'expression' ],
+  'generator-star-spacing': [ 'warn', { before: true, after: true } ],
+  indent: [ 'error', 2, { SwitchCase: 1 } ],
+  'jsx-quotes': [ 'warn', 'prefer-double' ],
   'key-spacing': [
     'warn',
     {
@@ -104,7 +101,7 @@ const styleRules = {
       afterColon: true,
     },
   ],
-  'keyword-spacing': ['warn', { before: true, after: true }],
+  'keyword-spacing': [ 'warn', { before: true, after: true } ],
   'max-len': [
     'warn',
     120,
@@ -116,11 +113,11 @@ const styleRules = {
   ],
   'no-mixed-spaces-and-tabs': 'error',
   'no-tabs': 'error',
-  'no-multi-spaces': [0],
-  'no-multiple-empty-lines': ['warn', { max: 1 }],
-  'object-curly-spacing': ['warn', 'always'],
-  'object-property-newline': ['warn', { allowMultiplePropertiesPerLine: true }],
-  'one-var': [0],
+  'no-multi-spaces': [ 0 ],
+  'no-multiple-empty-lines': [ 'warn', { max: 1 } ],
+  'object-curly-spacing': [ 'warn', 'always' ],
+  'object-property-newline': [ 'warn', { allowMultiplePropertiesPerLine: true } ],
+  'one-var': [ 0 ],
   'operator-linebreak': [
     'warn',
     'after',
@@ -131,40 +128,36 @@ const styleRules = {
       },
     },
   ],
-  'padded-blocks': ['warn', 'never'],
-  quotes: ['error', 'single', { avoidEscape: true }],
-  'rest-spread-spacing': ['warn', 'never'],
-  semi: ['warn', 'never'],
-  'semi-spacing': ['warn', { before: false, after: true }],
-  'space-before-blocks': ['warn', 'always'],
-  'space-before-function-paren': ['warn', 'always'],
-  'space-in-parens': ['warn', 'never'],
+  'padded-blocks': [ 'warn', 'never' ],
+  quotes: [ 'error', 'single', { avoidEscape: true } ],
+  'rest-spread-spacing': [ 'warn', 'never' ],
+  semi: [ 'warn', 'never' ],
+  'semi-spacing': [ 'warn', { before: false, after: true } ],
+  'space-before-blocks': [ 'warn', 'always' ],
+  'space-before-function-paren': [ 'warn', 'always' ],
+  'space-in-parens': [ 'warn', 'never' ],
   'space-infix-ops': 'warn',
-  'space-unary-ops': ['warn', { words: true, nonwords: false }],
+  'space-unary-ops': [ 'warn', { words: true, nonwords: false } ],
   'spaced-comment': [
     'warn',
     'always',
     {
-      line: { markers: ['*package', '!', ','] },
+      line: { markers: [ '*package', '!', ',' ] },
       block: {
         balanced: true,
-        markers: ['*package', '!', ','],
-        exceptions: ['*'],
+        markers: [ '*package', '!', ',' ],
+        exceptions: [ '*' ],
       },
     },
   ],
-  'template-curly-spacing': ['warn', 'never'],
-  'yield-star-spacing': ['warn', 'both'],
-}
-
-const prettierRules = {
-  'prettier/prettier': ['warn', prettierFormat],
+  'template-curly-spacing': [ 'warn', 'never' ],
+  'yield-star-spacing': [ 'warn', 'both' ],
 }
 
 const baseRules = {
   'array-callback-return': 'warn',
-  'arrow-body-style': ['warn', 'as-needed'],
-  camelcase: ['warn', { properties: 'never' }],
+  'arrow-body-style': [ 'warn', 'as-needed' ],
+  camelcase: [ 'warn', { properties: 'never' } ],
   'comma-dangle': [
     'error',
     {
@@ -176,19 +169,19 @@ const baseRules = {
     },
   ],
   'constructor-super': 'warn',
-  curly: ['warn', 'multi-line'],
-  'default-case': ['warn', { commentPattern: '^no default$' }],
+  curly: [ 'warn', 'multi-line' ],
+  'default-case': [ 'warn', { commentPattern: '^no default$' } ],
   'eol-last': 'error',
-  eqeqeq: ['warn', 'allow-null'],
+  eqeqeq: [ 'warn', 'allow-null' ],
   'guard-for-in': 'warn',
-  'new-cap': ['error', { newIsCap: true, capIsNew: false }],
+  'new-cap': [ 'error', { newIsCap: true, capIsNew: false } ],
   'new-parens': 'warn',
   'no-array-constructor': 'warn',
   'no-caller': 'warn',
   'no-class-assign': 'warn',
-  'no-cond-assign': ['warn', 'always'],
+  'no-cond-assign': [ 'warn', 'always' ],
   'no-const-assign': 'warn',
-  'no-constant-condition': ['warn', { checkLoops: false }],
+  'no-constant-condition': [ 'warn', { checkLoops: false } ],
   'no-control-regex': 'warn',
   'no-debugger': 'warn',
   'no-delete-var': 'warn',
@@ -204,7 +197,7 @@ const baseRules = {
   'no-extend-native': 'error',
   'no-extra-bind': 'warn',
   'no-extra-label': 'warn',
-  'no-extra-parens': ['warn', 'functions'],
+  'no-extra-parens': [ 'warn', 'functions' ],
   'no-fallthrough': 'warn',
   'no-func-assign': 'warn',
   'no-global-assign': 'error',
@@ -213,17 +206,17 @@ const baseRules = {
   'no-irregular-whitespace': 'warn',
   'no-iterator': 'warn',
   'no-label-var': 'warn',
-  'no-labels': ['warn', { allowLoop: false, allowSwitch: false }],
+  'no-labels': [ 'warn', { allowLoop: false, allowSwitch: false } ],
   'no-lone-blocks': 'warn',
   'no-loop-func': 'warn',
   'no-mixed-operators': [
     'warn',
     {
       groups: [
-        ['&', '|', '^', '~', '<<', '>>', '>>>'],
-        ['==', '!=', '===', '!==', '>', '>=', '<', '<='],
-        ['&&', '||'],
-        ['in', 'instanceof'],
+        [ '&', '|', '^', '~', '<<', '>>', '>>>' ],
+        [ '==', '!=', '===', '!==', '>', '>=', '<', '<=' ],
+        [ '&&', '||' ],
+        [ 'in', 'instanceof' ],
       ],
       allowSamePrecedence: false,
     },
@@ -243,8 +236,8 @@ const baseRules = {
   'no-proto': 'warn',
   'no-redeclare': 'warn',
   'no-regex-spaces': 'warn',
-  'no-restricted-syntax': ['warn', 'LabeledStatement', 'WithStatement'],
-  'no-return-assign': ['warn', 'except-parens'],
+  'no-restricted-syntax': [ 'warn', 'LabeledStatement', 'WithStatement' ],
+  'no-return-assign': [ 'warn', 'except-parens' ],
   'no-script-url': 'warn',
   'no-self-assign': 'warn',
   'no-self-compare': 'warn',
@@ -258,7 +251,7 @@ const baseRules = {
   'no-undef': 'error',
   'no-undef-init': 'error',
   'no-unexpected-multiline': 'warn',
-  'no-unneeded-ternary': ['warn', { defaultAssignment: false }],
+  'no-unneeded-ternary': [ 'warn', { defaultAssignment: false } ],
   'no-unreachable': 'warn',
   'no-unsafe-finally': 'warn',
   'no-unsafe-negation': 'warn',
@@ -280,7 +273,7 @@ const baseRules = {
       ignoreRestSiblings: true,
     },
   ],
-  'no-use-before-define': ['warn', 'nofunc'],
+  'no-use-before-define': [ 'warn', 'nofunc' ],
   'no-useless-call': 'warn',
   'no-useless-computed-key': 'warn',
   'no-useless-concat': 'warn',
@@ -297,16 +290,16 @@ const baseRules = {
   'no-var': 'warn',
   'no-whitespace-before-property': 'warn',
   'no-with': 'error',
-  'operator-assignment': ['warn', 'always'],
-  'quote-props': ['warn', 'as-needed', { numbers: true }],
+  'operator-assignment': [ 'warn', 'always' ],
+  'quote-props': [ 'warn', 'as-needed', { numbers: true } ],
   radix: 'warn',
   'require-yield': 'warn',
-  strict: ['warn', 'never'],
-  'unicode-bom': ['error', 'never'],
+  strict: [ 'warn', 'never' ],
+  'unicode-bom': [ 'error', 'never' ],
   'use-isnan': 'warn',
   'valid-typeof': 'warn',
-  'wrap-iife': ['warn', 'any'],
-  yoda: ['warn', 'never'],
+  'wrap-iife': [ 'warn', 'any' ],
+  yoda: [ 'warn', 'never' ],
   'unicorn/filename-case': [
     'error',
     {
@@ -317,14 +310,13 @@ const baseRules = {
   'unicorn/no-new-buffer': 'warn',
   'unicorn/prefer-starts-ends-with': 'warn',
   'unicorn/prefer-type-error': 'warn',
-  'linebreak-style': ['error', 'unix'],
+  'linebreak-style': [ 'error', 'unix' ],
 }
 
 const rules = Object.assign(
   ...keep([
     baseRules,
-    !hasPrettier && styleRules,
-    hasPrettier && prettierRules,
+    styleRules,
     hasReact && reactRules,
     hasA11y && a11yRules,
     hasJest && jestRules,
@@ -335,7 +327,6 @@ const config = {
   parser: 'babel-eslint',
   extends: 'plugin:import/warnings',
   plugins: keep([
-    hasPrettier && 'prettier',
     hasA11y && 'jsx-a11y',
     'babel',
     hasReact && 'react',
@@ -349,7 +340,6 @@ const config = {
     node: true,
     jest: hasJest,
   },
-  globals: { _jane: false },
   parserOptions: {
     ecmaVersion: 6,
     sourceType: 'module',

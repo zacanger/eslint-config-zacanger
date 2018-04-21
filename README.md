@@ -1,12 +1,12 @@
-# eslint-config-jane
+# eslint-config-zacanger
 
-Shared eslint config for front-end projects at [Jane](https://jane.com).
+Zac Anger's Eslint config.
 
 --------
 
 ## Installation
 
-`npm i -D eslint-config-jane`
+`npm i -D eslint-config-zacanger`
 
 You'll also need to install some plugins (`peerDependencies`), at least until
 there's some sort of resolution for [this
@@ -19,11 +19,9 @@ Optionally, you can also install any or all of:
 
 * `eslint-plugin-jest`
 * `eslint-plugin-jsx-a11y`
-* `eslint-plugin-prettier`
 * `eslint-plugin-react`
 
-If they're installed, their rules will be used. If `eslint-plugin-prettier` is
-installed, our style rules are removed.
+If they're installed, their rules will be used.
 
 ## Usage
 
@@ -31,19 +29,14 @@ installed, our style rules are removed.
 ```json
 {
   "root": true,
-  "extends": "eslint-config-jane"
+  "extends": "eslint-config-zacanger"
   // any custom configs
 }
 ```
 
-.prettierrc.js
-```javascript
-module.exports = require('eslint-config-jane/prettier')
-```
-
 ## Notes
 
-Our rules are heavily based on [Standard](https://standardjs.com/).
+My rules are heavily based on [Standard](https://standardjs.com/).
 
 Most rules only warn. Exceptions (rules that error):
 
