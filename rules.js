@@ -19,7 +19,7 @@ const reactStyleRules = {
 }
 
 const reactRules = Object.assign({
-  'react/jsx-no-bind': 0,
+  'react/jsx-no-bind': 'error',
   'react/no-did-update-set-state': 'error',
   'react/jsx-no-duplicate-props': [ 'error', { ignoreCase: true } ],
   'react/jsx-no-undef': 'error',
