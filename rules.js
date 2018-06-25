@@ -283,6 +283,7 @@ const baseRules = {
   'no-whitespace-before-property': 'error',
   'no-with': 'error',
   'operator-assignment': [ 'error', 'always' ],
+  'prefer-const': 'error',
   'quote-props': [ 'error', 'as-needed', { numbers: true } ],
   radix: 'error',
   'require-yield': 'error',
