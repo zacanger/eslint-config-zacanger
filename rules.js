@@ -1,3 +1,5 @@
+/* eslint-disable max-lines */
+
 const { isInstalled, keep } = require('./helpers')
 
 const hasReact = isInstalled('eslint-plugin-react')
@@ -149,6 +151,7 @@ const styleRules = {
 const baseRules = {
   'array-callback-return': 'error',
   'arrow-body-style': [ 'error', 'as-needed' ],
+  complexity: [ 'warn', 4 ],
   camelcase: [ 'error', { properties: 'never' } ],
   'comma-dangle': [
     'error',
@@ -166,6 +169,17 @@ const baseRules = {
   'eol-last': 'error',
   eqeqeq: [ 'error', 'allow-null' ],
   'guard-for-in': 'warn',
+  'max-depth': [ 'warn', 4 ],
+  'max-lines': [ 'warn', 200 ],
+  'max-nested-callbacks': [ 'warn', 2 ],
+  'max-params': [ 'warn', 4 ],
+  'max-statements': [ 'warn', 10 ],
+  'max-lines-per-function': [ 'warn', {
+    max: 40,
+    skipBlankLines: true,
+    skipComments: true,
+    IIFEs: true,
+  } ],
   'new-cap': [ 'error', { newIsCap: true, capIsNew: false } ],
   'new-parens': 'error',
   'no-array-constructor': 'error',
