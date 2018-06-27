@@ -169,6 +169,7 @@ const baseRules = {
   'eol-last': 'error',
   eqeqeq: [ 'error', 'allow-null' ],
   'guard-for-in': 'warn',
+  'max-classes-per-file': [ 'warn', 4 ],
   'max-depth': [ 'warn', 4 ],
   'max-lines': [ 'warn', 200 ],
   'max-nested-callbacks': [ 'warn', 2 ],
