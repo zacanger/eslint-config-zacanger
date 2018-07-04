@@ -151,7 +151,7 @@ const styleRules = {
 const baseRules = {
   'array-callback-return': 'error',
   'arrow-body-style': [ 'error', 'as-needed' ],
-  complexity: [ 'warn', 4 ],
+  complexity: [ 'warn', 10 ],
   camelcase: [ 'error', { properties: 'never' } ],
   'comma-dangle': [
     'error',
@@ -174,7 +174,7 @@ const baseRules = {
   'max-lines': [ 'warn', 200 ],
   'max-nested-callbacks': [ 'warn', 2 ],
   'max-params': [ 'warn', 4 ],
-  'max-statements': [ 'warn', 10 ],
+  'max-statements': [ 'warn', 20 ],
   'max-lines-per-function': [ 'warn', {
     max: 40,
     skipBlankLines: true,
