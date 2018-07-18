@@ -35,12 +35,13 @@
     "eslint-plugin-babel": "5.1.0",
     "eslint-plugin-import": "2.13.0",
     "eslint-plugin-jsx-a11y": "6.1.1",
+    "eslint-plugin-node": "7.0.1",
     "eslint-plugin-promise": "3.8.0",
     "eslint-plugin-react": "7.10.0",
     "eslint-plugin-unicorn": "4.0.3"
   },
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=8.0.0"
   },
   "peerDependencies": {
     "babel-eslint": "^8.0.0",
@@ -48,6 +49,7 @@
     "eslint-plugin-babel": "^5.0.0",
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^7.2.0",
     "eslint-plugin-unicorn": "^4.0.0"

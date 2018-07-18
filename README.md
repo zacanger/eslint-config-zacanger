@@ -14,13 +14,13 @@ You'll also need to install some plugins (`peerDependencies`), at least until
 there's some sort of resolution for [this
 issue](https://github.com/eslint/eslint/issues/3458):
 
-`npm i -D babel-eslint eslint-plugin-babel eslint-plugin-promise
-eslint-plugin-import eslint-plugin-unicorn`.
+`npm i -D babel-eslint eslint-plugin-{babel,promise,import,unicorn}`
 
 Optionally, you can also install any or all of:
 
 * `eslint-plugin-jsx-a11y`
 * `eslint-plugin-react`
+* `eslint-plugin-node`
 
 If they're installed, their rules will be used.
 

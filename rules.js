@@ -4,6 +4,28 @@ const { isInstalled, keep } = require('./helpers')
 
 const hasReact = isInstalled('eslint-plugin-react')
 const hasA11y = isInstalled('eslint-plugin-jsx-a11y')
+const hasNode = isInstalled('eslint-plugin-node')
+
+const nodeRules = {
+  'node/no-extraneous-import': 'error',
+  'node/no-extraneous-require': 'error',
+  'node/no-missing-import': 'error',
+  'node/no-missing-require': 'error',
+  'node/no-unpublished-bin': 'error',
+  'node/no-unpublished-import': 'warning',
+  'node/no-unpublished-require': 'warning',
+  'node/no-unsupported-features/es-builtins': 'error',
+  'node/no-unsupported-features/es-syntax': 'error',
+  'node/no-unsupported-features/node-builtins': 'error',
+  'node/process-exit-as-throw': 'error',
+  'node/shebang': 'error',
+  'node/no-deprecated-api': 'warning',
+  'node/prefer-global/buffer': [ 'warning', 'never' ],
+  'node/prefer-global/console': [ 'warning', 'always' ],
+  'node/prefer-global/process': [ 'warning', 'always' ],
+  'node/prefer-global/url-search-params': [ 'warning', 'never' ],
+  'node/prefer-global/url': [ 'warning', 'never' ]
+}
 
 const reactStyleRules = {
   'react/jsx-indent': [ 'error', 2 ],
@@ -326,13 +348,14 @@ const rules = Object.assign(
     baseRules,
     styleRules,
     hasReact && reactRules,
-    hasA11y && a11yRules
+    hasA11y && a11yRules,
+    hasNode && nodeRules
   ])
 )
 
 const config = {
   parser: 'babel-eslint',
-  extends: 'plugin:import/warnings',
+  extends: keep([ 'plugin:import/warnings', hasNode && 'plugin:node/recommended' ]),
   plugins: keep([
     hasA11y && 'jsx-a11y',
     'babel',
