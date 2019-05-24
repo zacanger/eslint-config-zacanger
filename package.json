@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-zacanger",
   "description": "DEPRECATED zacanger's eslint config",
-  "version": "3.4.2",
+  "version": "3.4.3",
   "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
   "license": "MIT",
   "main": "index.js",
