@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-zacanger",
-  "description": "zacanger's eslint config",
+  "description": "DEPRECATED zacanger's eslint config",
   "version": "3.4.2",
   "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
   "license": "MIT",
