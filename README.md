@@ -1,6 +1,6 @@
 # eslint-config-zacanger
 
-**DEPRECATED** See [https://github.com/zacanger/eslint-plugin-zacanger] instead.
+**DEPRECATED** See <https://github.com/zacanger/eslint-plugin-zacanger> instead.
 
 Zac Anger's Eslint config.
 
