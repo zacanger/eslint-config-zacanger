@@ -1,6 +1,6 @@
 # eslint-config-zacanger
 
-**DEPRECATED** Just use Standard.
+**DEPRECATED** See [https://github.com/zacanger/eslint-plugin-zacanger] instead.
 
 Zac Anger's Eslint config.
 
